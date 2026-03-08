@@ -15,10 +15,13 @@ model Tournament {
   location           String
   maxPlayers         Int       @default(72)
   registrationOpen   Boolean   @default(true)
+  isLive             Boolean   @default(false)
   entryFee           Int       @default(15000) // cents
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
   players            Player[]
+  teams              Team[]
+  holes              Hole[]
 }
 
 model Player {
@@ -34,6 +37,8 @@ model Player {
   tournamentId    String
   tournament      Tournament @relation(fields: [tournamentId], references: [id])
   payment         Payment?
+  teamId          String?
+  team            Team?      @relation(fields: [teamId], references: [id])
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 
@@ -50,4 +55,43 @@ model Payment {
   method          String?  // "stripe", "venmo", "manual", "day_of"
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+model Team {
+  id              String    @id @default(cuid())
+  name            String
+  tournamentId    String
+  tournament      Tournament @relation(fields: [tournamentId], references: [id])
+  players         Player[]
+  scores          Score[]
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([name, tournamentId])
+}
+
+model Hole {
+  id              String    @id @default(cuid())
+  number          Int
+  par             Int
+  yardage         Int
+  handicap        Int?
+  tournamentId    String
+  tournament      Tournament @relation(fields: [tournamentId], references: [id])
+  scores          Score[]
+
+  @@unique([number, tournamentId])
+}
+
+model Score {
+  id              String    @id @default(cuid())
+  strokes         Int
+  teamId          String
+  team            Team      @relation(fields: [teamId], references: [id])
+  holeId          String
+  hole            Hole      @relation(fields: [holeId], references: [id])
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([teamId, holeId])
 }

@@ -2,24 +2,17 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-navy-400 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <p className="text-white font-black text-lg uppercase tracking-wider">The Caz Masters</p>
-            <p className="text-sm mt-1">Cazenovia Golf Club &middot; July 4th Weekend</p>
-          </div>
-          <div className="flex gap-6 text-sm font-medium uppercase tracking-wider">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <Link href="/about" className="hover:text-white transition-colors">About</Link>
-            <Link href="/register" className="hover:text-gold-400 transition-colors">Register</Link>
-          </div>
-        </div>
-        <div className="mt-8 pt-8 border-t border-navy-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm">
-          <p>&copy; {new Date().getFullYear()} The Caz Masters</p>
-          <p className="text-navy-600 uppercase tracking-[0.2em] font-bold text-xs">
-            Brought to You by The Dog
+    <footer className="bg-[#faf0e6] border-t border-gray-100 py-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-xs tracking-widest uppercase text-gray-500">
+            &copy; {new Date().getFullYear()} The Caz Masters
           </p>
+          <div className="flex gap-6 text-xs tracking-widest uppercase text-gray-500">
+            <Link href="/course" className="hover:text-[#004225] transition-colors">Course</Link>
+            <Link href="/club" className="hover:text-[#004225] transition-colors">Club</Link>
+            <Link href="/register" className="hover:text-[#004225] transition-colors">Register</Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -64,15 +64,15 @@ export default function RegistrationForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border-2 border-navy-200 bg-white px-4 py-3.5 text-navy-900 placeholder:text-navy-300 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 focus:outline-none transition-colors text-base";
-  const labelClass = "block text-sm font-bold text-navy-700 mb-1.5 uppercase tracking-wider";
+    "w-full border-2 border-gray-200 bg-white px-4 py-3.5 text-[#004225] placeholder:text-gray-400 focus:border-[#004225] focus:ring-2 focus:ring-[#004225]/10 focus:outline-none transition-colors text-base";
+  const labelClass = "block text-sm font-bold text-[#004225] mb-1.5 uppercase tracking-wider";
 
   const isValid = form.fullName && form.email && form.phone && form.shirtSize && form.genderFlight;
 
   return (
     <div className="space-y-5">
       {error && (
-        <div className="bg-red-50 text-red-700 border border-red-200 rounded-xl px-4 py-3 text-sm font-medium">
+        <div className="bg-red-50 text-red-700 border border-red-200 px-4 py-3 text-sm font-medium">
           {error}
         </div>
       )}
@@ -147,7 +147,7 @@ export default function RegistrationForm() {
       </div>
 
       <div>
-        <label className={labelClass}>Team Preference <span className="text-navy-400 normal-case font-normal tracking-normal">(optional)</span></label>
+        <label className={labelClass}>Team Preference <span className="text-gray-400 normal-case font-normal tracking-normal">(optional)</span></label>
         <input
           type="text"
           className={inputClass}
@@ -158,7 +158,7 @@ export default function RegistrationForm() {
       </div>
 
       <div>
-        <label className={labelClass}>Dietary Needs <span className="text-navy-400 normal-case font-normal tracking-normal">(optional)</span></label>
+        <label className={labelClass}>Dietary Needs <span className="text-gray-400 normal-case font-normal tracking-normal">(optional)</span></label>
         <input
           type="text"
           className={inputClass}
@@ -172,20 +172,20 @@ export default function RegistrationForm() {
         <input
           type="checkbox"
           id="returning"
-          className="h-5 w-5 rounded border-navy-300 text-gold-500 focus:ring-gold-400"
+          className="h-5 w-5 border-gray-300 text-[#004225] focus:ring-[#004225]"
           checked={form.returningPlayer}
           onChange={(e) => update("returningPlayer", e.target.checked)}
         />
-        <label htmlFor="returning" className="text-navy-600 font-medium">
+        <label htmlFor="returning" className="text-gray-600 font-medium">
           I&apos;ve played in The Caz Masters before
         </label>
       </div>
 
-      <div className="border-t-2 border-navy-100 pt-6 space-y-3">
+      <div className="border-t-2 border-gray-100 pt-6 space-y-3">
         <button
           onClick={() => handleSubmit("stripe")}
           disabled={loading || !isValid}
-          className="w-full bg-gold-400 hover:bg-gold-300 disabled:bg-navy-200 disabled:text-navy-400 text-navy-950 font-black py-4 rounded-xl transition-all text-lg uppercase tracking-wide hover:scale-[1.02]"
+          className="w-full bg-[#004225] hover:bg-gray-800 disabled:bg-gray-200 disabled:text-gray-400 text-white font-black py-4 transition-all text-lg uppercase tracking-wide hover:scale-[1.02]"
         >
           {loading ? "Hold tight..." : "Pay $150 Now"}
         </button>
@@ -193,12 +193,12 @@ export default function RegistrationForm() {
         <button
           onClick={() => handleSubmit("day_of")}
           disabled={loading || !isValid}
-          className="w-full bg-navy-900 hover:bg-navy-800 disabled:bg-navy-200 disabled:text-navy-400 text-white font-bold py-4 rounded-xl transition-all text-base"
+          className="w-full bg-white hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 text-[#004225] border-2 border-[#004225] font-bold py-4 transition-all text-base"
         >
           {loading ? "Hold tight..." : "I'll Pay Day-Of"}
         </button>
 
-        <p className="text-center text-xs text-navy-400 mt-2">
+        <p className="text-center text-xs text-gray-400 mt-2">
           Card & Venmo accepted via Stripe. Or just bring cash.
         </p>
       </div>
