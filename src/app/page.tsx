@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-[#faf0e6]">
       {/* Hero Section */}
-      <section className="px-6 md:px-12 lg:px-20 pt-24 pb-32">
+      <section className="px-6 md:px-12 lg:px-20 pt-24 pb-12 md:pb-20">
         {/* Main Title Badge */}
         <div className="flex justify-center px-4">
           <Image
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
 
         {/* Stats Row */}
-        <div className="flex items-center justify-between w-[95%] md:w-[58%] mx-auto mt-20 md:mt-32 mb-8">
+        <div className="flex items-center justify-between w-[95%] md:w-[58%] mx-auto mt-12 md:mt-32 mb-0">
           <Image
             src="/images/yards_green.png"
             alt="2851 Yards"
