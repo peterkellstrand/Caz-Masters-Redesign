@@ -15,8 +15,8 @@ export default function SpotsCounter() {
   if (!data) {
     return (
       <div>
-        <p className="text-gold-500 font-black text-sm tracking-[0.2em] uppercase mb-2">SPOTS</p>
-        <p className="text-xl sm:text-2xl font-bold text-navy-900">-- / 72</p>
+        <p className="text-black font-black text-sm tracking-[0.2em] uppercase mb-2">SPOTS</p>
+        <p className="text-xl sm:text-2xl font-bold text-black">-- / 72</p>
       </div>
     );
   }
@@ -27,8 +27,8 @@ export default function SpotsCounter() {
 
   return (
     <div>
-      <p className="text-gold-500 font-black text-sm tracking-[0.2em] uppercase mb-2">SPOTS</p>
-      <p className={`text-xl sm:text-2xl font-bold ${full ? "text-red-600" : urgency ? "text-red-500" : "text-navy-900"}`}>
+      <p className="text-black font-black text-sm tracking-[0.2em] uppercase mb-2">SPOTS</p>
+      <p className={`text-xl sm:text-2xl font-bold ${full ? "text-red-600" : urgency ? "text-red-500" : "text-black"}`}>
         {full
           ? "Full. Damn."
           : urgency

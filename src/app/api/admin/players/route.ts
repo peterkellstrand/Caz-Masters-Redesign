@@ -1,33 +1,30 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { TOURNAMENT } from "@/lib/tournament";
 
-function checkAuth(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  if (auth !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
-    return false;
-  }
-  return true;
-}
+export async function GET() {
+  try {
+    const tournament = await prisma.tournament.findFirst({
+      where: { year: 2026 },
+    });
 
-export async function GET(req: NextRequest) {
-  if (!checkAuth(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+    if (!tournament) {
+      return NextResponse.json([]);
+    }
 
-  const tournament = await prisma.tournament.findUnique({
-    where: { year: TOURNAMENT.year },
-    include: {
-      players: {
-        include: { payment: true },
-        orderBy: { createdAt: "desc" },
+    const players = await prisma.player.findMany({
+      where: { tournamentId: tournament.id },
+      select: {
+        id: true,
+        fullName: true,
+        email: true,
+        teamId: true,
       },
-    },
-  });
+      orderBy: { fullName: "asc" },
+    });
 
-  return NextResponse.json({
-    tournament,
-    players: tournament?.players || [],
-    count: tournament?.players.length || 0,
-  });
+    return NextResponse.json(players);
+  } catch (error) {
+    console.error("Error fetching players:", error);
+    return NextResponse.json({ error: "Failed to fetch players" }, { status: 500 });
+  }
 }

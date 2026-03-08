@@ -13,12 +13,41 @@ export async function PATCH(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { registrationOpen } = body;
+  const { registrationOpen, isLive } = body;
+
+  const updateData: { registrationOpen?: boolean; isLive?: boolean } = {};
+  if (registrationOpen !== undefined) updateData.registrationOpen = registrationOpen;
+  if (isLive !== undefined) updateData.isLive = isLive;
 
   const tournament = await prisma.tournament.update({
     where: { year: TOURNAMENT.year },
-    data: { registrationOpen },
+    data: updateData,
   });
 
   return NextResponse.json({ tournament });
+}
+
+// Toggle live status (simplified endpoint)
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  const { action } = body;
+
+  if (action === "toggle-live") {
+    const current = await prisma.tournament.findFirst({
+      where: { year: TOURNAMENT.year },
+    });
+
+    if (!current) {
+      return NextResponse.json({ error: "Tournament not found" }, { status: 404 });
+    }
+
+    const tournament = await prisma.tournament.update({
+      where: { year: TOURNAMENT.year },
+      data: { isLive: !current.isLive },
+    });
+
+    return NextResponse.json({ tournament });
+  }
+
+  return NextResponse.json({ error: "Invalid action" }, { status: 400 });
 }

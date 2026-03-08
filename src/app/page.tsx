@@ -96,45 +96,6 @@ export default function Home() {
       </section>
 
 
-      {/* Your $150 Gets You */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-[#004225] uppercase mb-10">
-            Your $150 Gets You
-          </h2>
-          <div className="space-y-8 text-left">
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-3xl w-14 h-14 rounded-xl flex items-center justify-center shrink-0">1</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Greens Fees</p>
-                <p className="text-gray-600">9 holes with a cart at Cazenovia Golf Club. Show up and play.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-3xl w-14 h-14 rounded-xl flex items-center justify-center shrink-0">2</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Tournament Entry + Charity Donation</p>
-                <p className="text-gray-600">Prizes, contests, and a donation to Caz Cares. Feel good about yourself for once.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-3xl w-14 h-14 rounded-xl flex items-center justify-center shrink-0">3</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Swag</p>
-                <p className="text-gray-600">Tournament shirt and whatever else we throw at you. You&apos;ll look great.</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-10 pt-8 border-t border-gray-200">
-            <p className="text-gray-500 text-sm">
-              Plus Snappy Griller dogs (the finest Syracuse has to offer), cold Labatts, and
-              a post-round ceremony where we pretend to be Augusta for 20 minutes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
       {/* Dealer's Choice */}
       <section className="py-16 sm:py-20 bg-[#004225]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">

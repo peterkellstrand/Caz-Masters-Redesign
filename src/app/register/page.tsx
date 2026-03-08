@@ -29,27 +29,18 @@ export default function RegisterPage() {
           <h2 className="text-3xl font-black text-[#004225] uppercase mb-10 text-center">
             Your $150 Gets You
           </h2>
-          <div className="space-y-6">
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-2xl w-12 h-12 rounded-xl flex items-center justify-center shrink-0">1</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Greens Fees</p>
-                <p className="text-gray-600">9 holes with a cart at Cazenovia Golf Club. Show up and play.</p>
-              </div>
+          <div className="space-y-4">
+            <div>
+              <p className="text-[#004225] font-bold text-lg">Greens Fees</p>
+              <p className="text-gray-600">9 holes with a cart at Cazenovia Golf Club. Show up and play.</p>
             </div>
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-2xl w-12 h-12 rounded-xl flex items-center justify-center shrink-0">2</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Tournament Entry + Charity Donation</p>
-                <p className="text-gray-600">Prizes, contests, and a donation to Caz Cares. Feel good about yourself for once.</p>
-              </div>
+            <div>
+              <p className="text-[#004225] font-bold text-lg">Tournament Entry + Charity Donation</p>
+              <p className="text-gray-600">Prizes, contests, and a donation to Caz Cares. Feel good about yourself for once.</p>
             </div>
-            <div className="flex items-start gap-5">
-              <span className="bg-[#004225] text-white font-black text-2xl w-12 h-12 rounded-xl flex items-center justify-center shrink-0">3</span>
-              <div>
-                <p className="text-[#004225] font-bold text-lg">Swag</p>
-                <p className="text-gray-600">Tournament shirt and whatever else we throw at you. You&apos;ll look great.</p>
-              </div>
+            <div>
+              <p className="text-[#004225] font-bold text-lg">Swag</p>
+              <p className="text-gray-600">Tournament shirt and whatever else we throw at you. You&apos;ll look great.</p>
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-gray-200">
