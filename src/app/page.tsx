@@ -97,12 +97,12 @@ export default function Home() {
 
 
       {/* Dealer's Choice */}
-      <section className="py-16 sm:py-20 bg-[#004225]">
+      <section className="py-16 sm:py-20 bg-[#faf0e6]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-white uppercase mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#004225] uppercase mb-4">
             Dealer&apos;s Choice
           </h2>
-          <p className="text-xl text-gray-300 font-medium leading-relaxed">
+          <p className="text-xl text-[#004225] font-medium leading-relaxed">
             Hit a bad shot, crush a cold one, and reload a second chance. Add $5 to the pot.
           </p>
         </div>
@@ -110,8 +110,8 @@ export default function Home() {
 
 
       {/* Tagline */}
-      <section className="bg-[#004225] text-center py-4">
-        <p className="text-gray-600 text-xs uppercase tracking-[0.2em]">
+      <section className="bg-[#faf0e6] text-center py-4">
+        <p className="text-[#004225] text-xs uppercase tracking-[0.2em]">
           Brought to You by The Dog
         </p>
       </section>
