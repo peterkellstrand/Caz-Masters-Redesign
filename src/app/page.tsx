@@ -51,7 +51,7 @@ export default function Home() {
             alt="2851 Yards"
             width={300}
             height={150}
-            className="w-auto h-24 md:h-32 lg:h-40 object-contain"
+            className="w-auto h-14 md:h-32 lg:h-40 object-contain"
             unoptimized
           />
           <Image
@@ -59,7 +59,7 @@ export default function Home() {
             alt="9 Holes"
             width={300}
             height={150}
-            className="w-auto h-24 md:h-32 lg:h-40 object-contain"
+            className="w-auto h-14 md:h-32 lg:h-40 object-contain"
             unoptimized
           />
           <Image
@@ -67,7 +67,7 @@ export default function Home() {
             alt="35 Par"
             width={300}
             height={150}
-            className="w-auto h-24 md:h-32 lg:h-40 object-contain"
+            className="w-auto h-14 md:h-32 lg:h-40 object-contain"
             unoptimized
           />
         </div>
