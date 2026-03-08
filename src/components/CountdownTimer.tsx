@@ -25,7 +25,7 @@ function calculateTimeLeft(): TimeLeft {
 function TimeBlock({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <span className="text-4xl sm:text-5xl font-black text-[#004225] tabular-nums">
+      <span className="text-2xl md:text-4xl lg:text-5xl font-black text-[#004225] tabular-nums">
         {String(value).padStart(2, "0")}
       </span>
       <span className="text-gray-500 text-xs sm:text-sm mt-1 uppercase tracking-wider">{label}</span>
@@ -47,7 +47,7 @@ export default function CountdownTimer() {
   if (!mounted) return <div className="h-24" />;
 
   return (
-    <div className="flex gap-8 sm:gap-12">
+    <div className="flex gap-4 md:gap-8 lg:gap-12">
       <TimeBlock value={timeLeft.days} label="Days" />
       <TimeBlock value={timeLeft.hours} label="Hours" />
       <TimeBlock value={timeLeft.minutes} label="Min" />

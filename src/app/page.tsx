@@ -18,14 +18,14 @@ export default function Home() {
             alt="Caz Masters"
             width={7177}
             height={1492}
-            className="w-full max-w-[62vw] h-auto object-contain"
+            className="w-full max-w-[85vw] md:max-w-[62vw] h-auto object-contain"
             priority
             unoptimized
           />
         </div>
 
         {/* Date */}
-        <p className="text-center text-xl md:text-2xl uppercase tracking-widest mt-24 mb-6 font-medium">
+        <p className="text-center text-sm md:text-xl lg:text-2xl uppercase tracking-widest mt-16 md:mt-24 mb-4 md:mb-6 font-medium">
           July 4th Weekend, 2026
         </p>
 
@@ -38,14 +38,14 @@ export default function Home() {
         <div className="text-center">
           <Link
             href="/register"
-            className="inline-block bg-transparent border-4 border-[#004225] text-[#004225] font-black text-lg px-10 py-4 rounded-full transition-all hover:bg-[#004225] hover:text-white uppercase tracking-wide"
+            className="inline-block bg-transparent border-2 md:border-4 border-[#004225] text-[#004225] font-black text-sm md:text-lg px-6 md:px-10 py-2.5 md:py-4 rounded-full transition-all hover:bg-[#004225] hover:text-white uppercase tracking-wide"
           >
             Register Now
           </Link>
         </div>
 
         {/* Stats Row */}
-        <div className="flex items-center justify-between w-[58%] mx-auto mt-32 mb-8">
+        <div className="flex items-center justify-between w-[95%] md:w-[58%] mx-auto mt-20 md:mt-32 mb-8">
           <Image
             src="/images/yards_green.png"
             alt="2851 Yards"
