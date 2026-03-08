@@ -88,7 +88,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#004225]/60" />
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center text-white">
-          <p className="text-2xl sm:text-4xl leading-relaxed font-medium">
+          <p className="text-lg sm:text-2xl leading-relaxed font-medium tracking-tight">
             Time to dust off the sticks and practice powering down some beers.
             9 holes. Best friends. All for charity. You know the deal.
           </p>
